@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Portfolio</title>
+
+<style>
+  /* ===== RESET ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #eef2f7;
+    color: #333;
+  }
+
+  /* ===== HEADER ===== */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+ .hero-card {
+   max-width: 800px; /* or 100%, or larger than 600px */
+    background: white;
+    border-radius: 20px;
+    padding: 40px 60px;
+    width: 100%;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+
+  }
+
+  .profile-photo img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #764ba2;
+    margin-bottom: 25px;
+  }
+
+  .hero-card h1 {
+  white-space: nowrap;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 10px;
+  overflow-wrap: normal; /* no breaks */
+  overflow: hidden;       /* hide overflow */
+  text-overflow: ellipsis; /* show ... if still too long */
+  max-width: 100%;        /* ensure max width inside container */
+}
+  .hero-card h1 span {
+    color: #764ba2;
+  }
+
+  .hero-card p {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+  }
+
+  .btn-primary {
+    background-color: #764ba2;
+    color: white;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #5a3d82;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #764ba2;
+    border: 2px solid #764ba2;
+  }
+
+  .btn-secondary:hover {
+    background-color: #764ba2;
+    color: white;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  section h2 {
+    color: #5a4fcf;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  /* ===== SKILLS ===== */
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .skills span {
+    background: #f0efff;
+    color: #5a4fcf;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ===== PROJECTS ===== */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    background: #fafaff;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 5px solid #5a4fcf;
+    transition: transform 0.3s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-card h3 {
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .project-card small {
+    color: #777;
+    font-size: 13px;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact p {
+    margin: 8px 0;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero-card {
+      padding: 30px 20px;
+    }
+
+    .hero-card h1 {
+      font-size: 2rem;
+    }
+
+    .profile-photo img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      padding: 14px 0;
+    }
+  }
+</style>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="hero">
+  <div class="hero-card">
+    <div class="profile-photo">
+      <!-- Use relative path to your photo here -->
+      <img src="C:\Users\User\Pictures\profile1.jpg" alt="Myat Wuttyi Phyoe" />
+    </div>
+    <h1>
+      Hi, I'm <span>Myat Wuttyi Phyoe</span>
+    </h1>
+    <p>
+      A passionate Web Developer / Designer creating beautiful and functional
+      websites.
+    </p>
+    <div class="buttons">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-secondary">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN CONTAINER ===== -->
+<div class="container">
+
+  <!-- ABOUT ME -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I enjoy building simple, clean, and user-friendly websites while continuously improving my skills. My goal is to become a professional web developer. I am a final-year Computer Science student with experience in academic and group projects using various web and software technologies. I am passionate about learning, problem-solving, and starting my career as a software developer.
+    </p>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Java</span>
+      <span>J2EE</span>
+      <span>PHP</span>
+      <span>C#</span>
+      <span>MySQL</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Academic & Group Projects</h2>
+    <div class="projects">
+
+      <div class="project-card">
+        <h3>K-pop Idol Group Website</h3>
+        <p>Static website created using HTML as a group project.</p>
+        <small>Second Year – First Semester</small>
+      </div>
+
+      <div class="project-card">
+        <h3>Hospital Management System</h3>
+        <p>J2EE-based system for managing patients and hospital operations.</p>
+        <small>Second Year – Second Semester</small>
+      </div>
+
+      <div class="project-card">
+        <h3>Quiz Game</h3>
+        <p>Interactive quiz application developed using JavaScript.</p>
+        <small>Second Year – Second Semester</small>
+      </div>
+
+      <div class="project-card">
+        <h3>Online Learning Class System</h3>
+        <p>PHP & MySQL based platform for managing online learning.</p>
+        <small>Third Year – First Semester</small>
+      </div>
+
+      <div class="project-card">
+        <h3>Life Assurance System</h3>
+        <p>C# desktop application for managing life assurance policies.</p>
+        <small>Third Year – Second Semester</small>
+      </div>
+
+    </div>
+  </section>
+
+ <section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p><i class="fa-solid fa-envelope"></i> Email: phyoemyatwuttyi2@gmail.com</p>
+  <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/phyoemyatwuttyi2-png/Ma-Myat-Wuttyi-Phyoe" target="_blank">github.com/myatwuttyiphyoe</a></p>
+  
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Myat Wuttyi Phyoe | Computer Science Student
+</footer>
+
+</body>
+</html>
